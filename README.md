@@ -1,6 +1,8 @@
-# Minriksdag
+# MinRiksdag
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+A small web application for understanding who best represents your interests in the Swedish Riksdag
+
+Based on some ideas explored in the old repo [MyRiksdag](https://github.com/ErikBjare/MyRiksdag).
 
 ## Development server
 
