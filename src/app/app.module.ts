@@ -12,10 +12,13 @@ import {RouterModule, Routes} from '@angular/router';
 import { RiksdagComponent } from './riksdag/riksdag.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { ChartTestsComponent } from './chart-tests/chart-tests.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'riksdag', component: RiksdagComponent },
+  { path: 'charts', component: ChartTestsComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -25,7 +28,8 @@ const appRoutes: Routes = [
     AppComponent,
     RiksdagComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ChartTestsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,7 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatToolbarModule,
     MatMenuModule,
+    ChartsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
