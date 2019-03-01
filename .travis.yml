@@ -2,11 +2,16 @@ language: node_js
 node_js:
   - "10"
 
+env:
+  - PYTHON_VERSION=3.6
+
 cache:
   directory:
     - data
 
 before_install:
+  - pyenv install $PYTHON_VERSION
+  - pyenv global $PYTHON_VERSION
   - pip3 install --user pipenv
   - mkdir -p data
   - if [ ! -f data/party_compare.json ]; then
