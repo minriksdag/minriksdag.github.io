@@ -10,7 +10,6 @@ cache:
     - data
 
 before_install:
-  - pyenv install $PYTHON_VERSION
   - pyenv global $PYTHON_VERSION
   - pip3 install --user pipenv
   - mkdir -p data
