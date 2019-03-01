@@ -4,6 +4,8 @@ A small web application for understanding who best represents your interests in 
 
 Based on some ideas explored in the old repo [MyRiksdag](https://github.com/ErikBjare/MyRiksdag).
 
+This was developed as part of the LTH course EDAF90.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
