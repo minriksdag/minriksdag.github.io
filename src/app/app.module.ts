@@ -12,10 +12,12 @@ import {RouterModule, Routes} from '@angular/router';
 import { RiksdagComponent } from './riksdag/riksdag.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CompareComponent } from './compare/compare.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'riksdag', component: RiksdagComponent },
+  { path: 'compare', component: CompareComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     AppComponent,
     RiksdagComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CompareComponent
   ],
   imports: [
     BrowserModule,
