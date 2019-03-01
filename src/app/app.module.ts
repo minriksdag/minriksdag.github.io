@@ -7,12 +7,25 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import {RouterModule, Routes} from '@angular/router';
 import { RiksdagComponent } from './riksdag/riksdag.component';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'riksdag', component: RiksdagComponent },
+  { path: '**', component: PageNotFoundComponent }
+];
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    RiksdagComponent
+    RiksdagComponent,
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +33,11 @@ import { RiksdagComponent } from './riksdag/riksdag.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatToolbarModule,
-    
+    MatMenuModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
