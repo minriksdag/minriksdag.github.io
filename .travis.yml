@@ -6,7 +6,7 @@ env:
   - PYTHON_VERSION=3.6
 
 cache:
-  directory:
+  directories:
     - data
 
 before_install:
