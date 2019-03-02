@@ -1,3 +1,19 @@
-<p>
-  riksdag works!
-</p>
+<h2>Select a party</h2>
+
+<mat-form-field>
+    <mat-select [(value)]="selectedParty">
+      <mat-option *ngFor="let party of parties" [value]="party">
+        {{party.name}}
+      </mat-option>
+  </mat-select>
+</mat-form-field>
+<div>
+  <h2>{{selectedParty.name}}</h2>
+  <div>
+    <ul>
+        <li>Yes: </li>
+        <li>No: </li>
+        <li>Abscent: </li>
+    </ul>
+  </div>
+</div>
