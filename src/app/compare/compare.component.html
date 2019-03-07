@@ -1,17 +1,38 @@
-<h4>Välj Partier</h4>
-<mat-form-field>
-  <mat-select placeholder="Parti 1" [(value)]="partyOne" (selectionChange)="changedSelect($event)">
-    <mat-option *ngFor="let party of parties" [value]="party.abbr">
-      {{party.name}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-<mat-form-field>
-  <mat-select placeholder="Parti 2" [(ngModel)]="partyTwo" (selectionChange)="changedSelect($event)">
-    <mat-option *ngFor="let party of parties" [value]="party.abbr">
-      {{party.name}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+<div class="container">
+  <div class="row">
+    <h4>Välj Partier</h4>
+    <mat-form-field>
+      <mat-select placeholder="Parti 1" [(value)]="partyOne" (selectionChange)="changedSelect($event)">
+        <mat-option *ngFor="let party of parties" [value]="party.abbr">
+          {{party.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Parti 2" [(ngModel)]="partyTwo" (selectionChange)="changedSelect($event)">
+        <mat-option *ngFor="let party of parties" [value]="party.abbr">
+          {{party.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 
-Chosen Pair: {{chosenPair}}
+  Chosen Pair: {{chosenPair}}
+
+  <div class="row">
+    <div class="col-md-6">
+      <div style="display: block;">
+        <canvas baseChart width="400" height="400"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+  </div>
+
+</div>

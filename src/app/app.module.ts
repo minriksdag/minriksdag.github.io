@@ -14,9 +14,10 @@ import { RiksdagComponent } from './riksdag/riksdag.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CompareComponent } from './compare/compare.component';
-import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { ChartsModule, BaseChartDirective } from 'ng2-charts';
 import { ChartTestsComponent } from './chart-tests/chart-tests.component';
 import { FormsModule } from '@angular/forms';
+import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
