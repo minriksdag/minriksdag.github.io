@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+    centered = false;
+ disabled = false;
+ unbounded = false;
+
+ radius: number;
+ color: string;
+
 
   constructor() { }
 

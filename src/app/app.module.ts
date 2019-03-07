@@ -12,6 +12,10 @@ import {RouterModule, Routes} from '@angular/router';
 import { RiksdagComponent } from './riksdag/riksdag.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatListModule} from '@angular/material/list';
+import {MatRippleModule} from '@angular/material/core';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,10 +38,12 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatToolbarModule,
     MatMenuModule,
+    MatSelectModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    MatRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
