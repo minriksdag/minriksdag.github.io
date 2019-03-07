@@ -2,6 +2,25 @@ language: node_js
 node_js:
   - "10"
 
+env:
+  - PYTHON_VERSION=3.6
+
+cache:
+  directories:
+    - data
+
+before_install:
+  - pyenv global $PYTHON_VERSION
+  - pip3 install --user pipenv
+  - mkdir -p data
+  - if [ ! -f data/party_compare.json ]; then
+      cd vendor/MyRiksdag;
+      ./get_data.sh;
+      python3 -m pipenv install;
+      python3 -m pipenv run python3 save_dataframe.py;
+      mv party_compare.json ../../data;
+    fi
+
 install:
   - npm install
 
