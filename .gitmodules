@@ -1,0 +1,3 @@
+[submodule "MyRiksdag"]
+	path = vendor/MyRiksdag
+	url = https://github.com/ErikBjare/MyRiksdag.git
