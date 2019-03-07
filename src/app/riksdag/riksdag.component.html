@@ -1,19 +1,22 @@
-<h2>Select a party</h2>
-
-<mat-form-field>
-    <mat-select [(value)]="selectedParty">
-      <mat-option *ngFor="let party of parties" [value]="party">
-        {{party.name}}
-      </mat-option>
-  </mat-select>
-</mat-form-field>
-<div>
-  <h2>{{selectedParty.name}}</h2>
-  <div>
-    <ul>
-        <li>Yes: </li>
-        <li>No: </li>
-        <li>Abscent: </li>
-    </ul>
-  </div>
+<div class="container">
+    <div class="mt-5">
+        <h2>Välj ett parti</h2>
+        <mat-form-field>
+            <mat-select [(value)]="selectedParty" placeholder="Välj ett parti">
+              <mat-option *ngFor="let party of parties" [value]="party">
+                {{party.name}}
+              </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <h2>{{selectedParty.name}}</h2>
+            <div>
+                <mat-list>
+                     <mat-list-item><mat-icon class="mr-2">thumb_up</mat-icon>  Ja: </mat-list-item>
+                     <mat-list-item> <mat-icon class="mr-2">thumb_down</mat-icon> Nej:  </mat-list-item>
+                     <mat-list-item> <mat-icon class="mr-2">not_interested</mat-icon>  Frånvarande:</mat-list-item>
+                </mat-list>
+            </div>
+        </div>
+    </div>
 </div>

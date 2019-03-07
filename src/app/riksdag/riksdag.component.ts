@@ -25,6 +25,10 @@ export class RiksdagComponent implements OnInit {
     ];
     selectedParty = 'Select';
 
+    show(){
+        
+    }
+
 
   constructor() { }
 

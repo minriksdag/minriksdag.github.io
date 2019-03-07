@@ -1,13 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar color="primary">
+<mat-toolbar class="bg-light">
   <mat-toolbar-row>
-    <span>MinRiksdag</span>
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="/" routerLinkActive="active">Home</button>
-      <button mat-menu-item routerLink="/riksdag" routerLinkActive="active">Riksdag</button>
-      <button mat-menu-item routerLink="/compare" routerLinkActive="active">Compare</button>
-    </mat-menu>
+    <span >MinRiksdag</span>
+      <button mat-button routerLink="/" routerLinkActive="active">Home</button>
+      <button mat-button routerLink="/riksdag" routerLinkActive="active">Statistik över partier</button>
+      <button mat-button routerLink="/compare" routerLinkActive="active">Jämför partier</button>
   </mat-toolbar-row>
 </mat-toolbar>
 

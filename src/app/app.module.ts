@@ -12,6 +12,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
 import {MatRippleModule} from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
 
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     ),
     MatRippleModule,
+    MatListModule, MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
