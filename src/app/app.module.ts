@@ -8,6 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material';
 import {RouterModule, Routes} from '@angular/router';
 import { RiksdagComponent } from './riksdag/riksdag.component';
 import { HomeComponent } from './home/home.component';
@@ -15,6 +16,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { CompareComponent } from './compare/compare.component';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { ChartTestsComponent } from './chart-tests/chart-tests.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,7 +34,7 @@ const appRoutes: Routes = [
     HomeComponent,
     PageNotFoundComponent,
     CompareComponent,
-    ChartTestsComponent,
+    ChartTestsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,8 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatMenuModule,
     ChartsModule,
+    MatSelectModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
