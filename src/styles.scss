@@ -1,8 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 @import "~bootstrap/scss/mixins/grid-framework";
 @import "~bootstrap/scss/mixins/grid";
+@import "~bootstrap/scss/mixins/hover";
+@import "~bootstrap/scss/mixins/background-variant";
 @import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/utilities/background";
 
 body {
   margin: 0;

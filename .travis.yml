@@ -18,7 +18,8 @@ before_install:
       ./get_data.sh;
       python3 -m pipenv install;
       python3 -m pipenv run python3 save_dataframe.py;
-      mv party_compare.json ../../data;
+      python3 -m pipenv run python3 parties.py;
+      mv party_compare.json parties.json valkretsar.json ../../data;
     fi
 
 install:
@@ -27,3 +28,18 @@ install:
 script:
   - npm run build
 # - npm test
+
+before_deploy:
+  - npm run build --prod --base-href="/MinRiksdag"
+  - sed -i 's/base href="\/"/base href="\/MinRiksdag"/g' dist/minriksdag/index.html
+  - sed -i 's/src="/src="\/MinRiksdag\//g' dist/minriksdag/index.html
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: dist/minriksdag
+  target-branch: gh-pages
+  on:
+    branch: master
