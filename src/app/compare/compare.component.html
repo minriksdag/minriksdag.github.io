@@ -1,40 +1,38 @@
-
-
-
-
-  <p>
-    compare works!
-  </p>
-
-  <div class="mdc-select">
-    <i class="mdc-select__dropdown-icon"></i>
-    <select class="mdc-select__native-control">
-      <option value="" disabled selected></option>
-      <option value="S">
-        S
-      </option>
-      <option value="SD">
-        SD
-      </option>
-      <option value="MP">
-        MP
-      </option>
-      <option value="KD">
-        KD
-      </option>
-      <option value="KD">
-        C
-      </option>
-      <option value="KD">
-        L
-      </option>
-      <option value="KD">
-        M
-      </option>
-      <option value="V">
-        V
-      </option>
-    </select>
-    <label class="mdc-floating-label">Välj ett parti</label>
-    <div class="mdc-line-ripple"></div>
+<div class="container">
+  <h2>Välj Partier</h2>
+  <div class="row">
+    <mat-form-field>
+      <mat-select placeholder="Parti 1" [(value)]="partyOne" (selectionChange)="changedSelect($event)">
+        <mat-option *ngFor="let party of parties" [value]="party.abbr">
+          {{party.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Parti 2" [(ngModel)]="partyTwo" (selectionChange)="changedSelect($event)">
+        <mat-option *ngFor="let party of parties" [value]="party.abbr">
+          {{party.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
+
+  Chosen Pair: {{chosenPair}}
+
+  <div class="row">
+    <div class="col-md-12">
+      <div style="display: block; position: relative; width: 100%; min-height: 65vh">
+        <canvas baseChart
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                chartType="line"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+  </div>
+
+</div>
