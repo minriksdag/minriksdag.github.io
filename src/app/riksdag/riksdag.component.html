@@ -2,7 +2,7 @@
     <div class="">
         <h2 (click)="show()">Välj ett parti</h2>
         <mat-form-field>
-            <mat-select [(value)]="selectedParty" placeholder="Välj ett parti">
+            <mat-select [(value)]="selectedParty" [(ngModel)]="selectedParty" (ngModelChange)="selectParty($event)" placeholder="Välj ett parti">
               <mat-option *ngFor="let party of parties" [value]="party">
                 {{party.name}}
               </mat-option>
@@ -20,11 +20,12 @@
         </div>
             <h2> Voteringsfråga </h2>
             <mat-form-field>
-                <mat-select [(value)]="selectedVote" placeholder="Välj en fråga">
-                  <mat-option *ngFor="let party of parties" [value]="party">
-                    {{party.name}}
+                <mat-select [(value)]="memberParty" [(ngModel)]="memberParty" (ngModelChange)="selectParty($event)" placeholder="Välj">
+                  <mat-option *ngFor="let member of members" [value]="member">
+                    {{member.name}}
                   </mat-option>
-                </mat-select>
+              </mat-select>
             </mat-form-field>
+
     </div>
 </div>
