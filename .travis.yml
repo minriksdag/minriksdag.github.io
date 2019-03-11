@@ -28,6 +28,9 @@ script:
   - npm run build
 # - npm test
 
+before_deploy:
+  - sed -i 's/base href="\/"/base href="\/minriksdag"/' dist/minriksdag/index.html
+
 deploy:
   provider: pages
   skip-cleanup: true
