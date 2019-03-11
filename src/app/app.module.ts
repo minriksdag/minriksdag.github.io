@@ -12,6 +12,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
 import {MatRippleModule} from '@angular/material/core';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
 
 import { ChartsModule } from 'ng2-charts';
 
@@ -23,12 +25,14 @@ import { CompareComponent } from './compare/compare.component';
 import { ChartTestsComponent } from './chart-tests/chart-tests.component';
 import { FormsModule } from '@angular/forms';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
+import { MembersComponent } from './members/members.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'riksdag', component: RiksdagComponent },
   { path: 'compare', component: CompareComponent },
   { path: 'charts', component: ChartTestsComponent},
+  { path: 'members', component: MembersComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -40,7 +44,8 @@ const appRoutes: Routes = [
     HomeComponent,
     PageNotFoundComponent,
     CompareComponent,
-    ChartTestsComponent
+    ChartTestsComponent,
+    MembersComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +58,8 @@ const appRoutes: Routes = [
     ChartsModule,
     MatSelectModule,
     FormsModule,
+    MatTableModule,
+    MatSortModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
