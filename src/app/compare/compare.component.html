@@ -1,6 +1,6 @@
 <div class="container">
+  <h2>Välj Partier</h2>
   <div class="row">
-    <h4>Välj Partier</h4>
     <mat-form-field>
       <mat-select placeholder="Parti 1" [(value)]="partyOne" (selectionChange)="changedSelect($event)">
         <mat-option *ngFor="let party of parties" [value]="party.abbr">
@@ -20,15 +20,15 @@
   Chosen Pair: {{chosenPair}}
 
   <div class="row">
-    <div class="col-md-6">
-      <div style="display: block;">
-        <canvas baseChart width="400" height="400"
+    <div class="col-md-12">
+      <div style="display: block; position: relative; width: 100%; min-height: 65vh">
+        <canvas baseChart
                 [datasets]="lineChartData"
                 [labels]="lineChartLabels"
                 [options]="lineChartOptions"
                 [colors]="lineChartColors"
                 [legend]="lineChartLegend"
-                [chartType]="lineChartType"
+                chartType="line"
                 (chartHover)="chartHovered($event)"
                 (chartClick)="chartClicked($event)"></canvas>
       </div>
