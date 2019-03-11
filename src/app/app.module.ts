@@ -13,7 +13,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
 import {MatRippleModule} from '@angular/material/core';
 
-import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
