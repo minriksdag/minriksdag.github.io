@@ -4,10 +4,10 @@ import {default as _members} from '../../assets/members.json';
 
 @Component({
   selector: 'app-members',
-  templateUrl: './members.component.html',
-  styleUrls: ['./members.component.scss']
+  templateUrl: './memberList.component.html',
+  styleUrls: ['./memberList.component.scss']
 })
-export class MembersComponent implements OnInit {
+export class MemberListComponent implements OnInit {
   members = Object.values(_members).map((member: any) => {
     const totalVotes: any = Object.values(member.aggregate_votes)
       .reduce((accumulator: any, currentValue: any) => accumulator + currentValue);

@@ -25,14 +25,16 @@ import { CompareComponent } from './compare/compare.component';
 import { ChartTestsComponent } from './chart-tests/chart-tests.component';
 import { FormsModule } from '@angular/forms';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
-import { MembersComponent } from './members/members.component';
+import { MemberListComponent } from './memberList/memberList.component';
+import { MemberComponent } from './member/member.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'riksdag', component: RiksdagComponent },
   { path: 'compare', component: CompareComponent },
   { path: 'charts', component: ChartTestsComponent},
-  { path: 'members', component: MembersComponent},
+  { path: 'members', component: MemberListComponent},
+  { path: 'members/:id', component: MemberComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -45,7 +47,8 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     CompareComponent,
     ChartTestsComponent,
-    MembersComponent
+    MemberListComponent,
+    MemberComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +69,7 @@ const appRoutes: Routes = [
     ),
     MatRippleModule,
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
