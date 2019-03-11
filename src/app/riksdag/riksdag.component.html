@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="mt-5">
-        <h2>Välj ett parti</h2>
+<div class="container" style="text-align:center; display: inline-block">
+    <div class="">
+        <h2 (click)="show()">Välj ett parti</h2>
         <mat-form-field>
             <mat-select [(value)]="selectedParty" placeholder="Välj ett parti">
               <mat-option *ngFor="let party of parties" [value]="party">
@@ -8,7 +8,7 @@
               </mat-option>
           </mat-select>
         </mat-form-field>
-        <div>
+        <div >
           <h2>{{selectedParty.name}}</h2>
             <div>
                 <mat-list>
@@ -18,5 +18,13 @@
                 </mat-list>
             </div>
         </div>
+            <h2> Voteringsfråga </h2>
+            <mat-form-field>
+                <mat-select [(value)]="selectedVote" placeholder="Välj en fråga">
+                  <mat-option *ngFor="let party of parties" [value]="party">
+                    {{party.name}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
     </div>
 </div>

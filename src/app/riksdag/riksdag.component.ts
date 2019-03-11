@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import * as members from './members.json';
 
 export interface Party {
+  id: number;
+  name: string;
+}
+export interface Vote {
   id: number;
   name: string;
 }
@@ -23,10 +28,17 @@ export class RiksdagComponent implements OnInit {
       { id: 8, name: 'Kristdemokraterna' },
       { id: 9, name: 'Sverigedemokraterna' }
     ];
-    selectedParty = 'Select';
+
+
+    selectedParty = '';
+    selectedVote = '';
 
     show(){
-        
+        let v = Object.keys(members).filter(party=> (console.log(party)));
+    //     if(members["0564126739422"].party === "M"){ members[party].party === "M"
+    //     console.log("HEJ");
+    // }
+    console.log(v);
     }
 
 
