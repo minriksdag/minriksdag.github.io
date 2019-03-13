@@ -1,19 +1,63 @@
-<h2>Select a party</h2>
+<div class="container" style="text-align:center;">
+    <div>
+        <h2 (click)="show()">Välj ett parti</h2>
+        <mat-form-field>
+            <mat-select [(value)]="selectedParty" [(ngModel)]="selectedParty" (ngModelChange)="selectParty($event)" placeholder="Välj ett parti">
+              <mat-option *ngFor="let party of parties" [value]="party">
+                {{party.partyname}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
 
-<mat-form-field>
-    <mat-select [(value)]="selectedParty">
-      <mat-option *ngFor="let party of parties" [value]="party">
-        {{party.name}}
-      </mat-option>
-  </mat-select>
-</mat-form-field>
-<div>
-  <h2>{{selectedParty.name}}</h2>
-  <div>
-    <ul>
-        <li>Yes: </li>
-        <li>No: </li>
-        <li>Abscent: </li>
-    </ul>
-  </div>
+    <div class="bg-light">
+        <h3> Så här har partiet röstat </h3>
+        <div class="row mb-3 ml-4 mr-4">
+            <div class="col-lg-3">
+                <mat-icon class="mr-2">thumb_up</mat-icon>  Ja: {{stats.ja}} %
+            </div>
+            <div class="col-lg-3">
+                <mat-icon class="mr-2">thumb_down</mat-icon> Nej: {{stats.nej}} %
+            </div>
+            <div class="col-lg-3">
+                <mat-icon class="mr-2">not_interested</mat-icon>  Avstår: {{stats.avstar}} %
+            </div>
+            <div class="col-lg-3">
+                <mat-icon class="mr-2">beach_access</mat-icon>  Frånvaro: {{stats.franvaro}} %
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="text-align:left" class="mt-4">
+        <table style="width:100%;" mat-table [dataSource]="members" class="mat-elevation-z8">
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> Namn. </th>
+              <td mat-cell *matCellDef="let members"> {{members.name}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Parti </th>
+              <td mat-cell *matCellDef="let members"> {{members.party}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="weight">
+              <th mat-header-cell *matHeaderCellDef> Valkrets </th>
+              <td mat-cell *matCellDef="let members"> {{members.valkrets}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+              <th mat-header-cell *matHeaderCellDef> Födelseår </th>
+              <td mat-cell *matCellDef="let members"> {{members.birthyear}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
 </div>
