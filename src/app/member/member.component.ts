@@ -19,7 +19,7 @@ export class MemberComponent implements OnInit {
     { name: 'Moderaterna',
       abbr: 'M'
     },
-    { name: 'Centerparitet',
+    { name: 'Centerpartiet',
       abbr: 'C'
     },
     { name: 'Kristdemokraterna',
