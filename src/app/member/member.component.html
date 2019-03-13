@@ -8,7 +8,7 @@
           <mat-card-title>{{member.name}}</mat-card-title>
           <mat-card-subtitle>{{getParty(member.party)}} - {{member.valkrets}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <img mat-card-image style="max-height: 500px; object-fit: cover;" [src]="member.imageURL" alt="Probably a photo of an old white dude">
         <mat-card-content>
           <div class="row justify-content-center" style="margin-bottom: 10px">
             <div class="col-5"><i style="vertical-align:middle;" class="material-icons md-36">thumb_up</i>&nbsp;&nbsp; Ja: {{member.percJa || 0}}% ({{member.aggregate_votes.Ja || 0}})</div>
