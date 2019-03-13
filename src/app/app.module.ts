@@ -29,7 +29,6 @@ import { RiksdagComponent } from './riksdag/riksdag.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CompareComponent } from './compare/compare.component';
 import { ChartTestsComponent } from './chart-tests/chart-tests.component';
-import { MembersComponent } from './members/members.component';
 import { MemberListComponent } from './memberList/memberList.component';
 import { MemberComponent } from './member/member.component';
 
