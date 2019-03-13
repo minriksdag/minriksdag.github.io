@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
@@ -16,8 +17,11 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 
 import { ChartsModule } from 'ng2-charts';
+import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -25,15 +29,17 @@ import { RiksdagComponent } from './riksdag/riksdag.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CompareComponent } from './compare/compare.component';
 import { ChartTestsComponent } from './chart-tests/chart-tests.component';
-import * as pluginDataLabels from './chartjs-plugin-datalabels';
 import { MembersComponent } from './members/members.component';
+import { MemberListComponent } from './memberList/memberList.component';
+import { MemberComponent } from './member/member.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'riksdag', component: RiksdagComponent },
   { path: 'compare', component: CompareComponent },
   { path: 'charts', component: ChartTestsComponent},
-  { path: 'members', component: MembersComponent},
+  { path: 'members', component: MemberListComponent},
+  { path: 'members/:id', component: MemberComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -46,11 +52,13 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     CompareComponent,
     ChartTestsComponent,
-    MembersComponent
+    MemberListComponent,
+    MemberComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatToolbarModule,
@@ -61,6 +69,9 @@ const appRoutes: Routes = [
     FormsModule,
     MatTableModule,
     MatSortModule,
+    MatCardModule,
+    MatChipsModule,
+    MatIconModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
@@ -68,6 +79,7 @@ const appRoutes: Routes = [
     MatRippleModule,
     MatListModule, MatIconModule,
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
