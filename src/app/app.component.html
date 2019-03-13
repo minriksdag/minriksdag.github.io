@@ -1,10 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar class="bg-light">
+<mat-toolbar color="primary" style="margin-bottom: 10px">
   <mat-toolbar-row>
+    <button mat-icon-button id="hamburger" [matMenuTriggerFor]="menu" style="margin-right: 10px">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/" routerLinkActive="active">Home</button>
+      <button mat-menu-item routerLink="/riksdag" routerLinkActive="active">Statistik över partier</button>
+      <button mat-menu-item routerLink="/compare" routerLinkActive="active">Jämför partier</button>
+      <button mat-menu-item routerLink="/members" routerLinkActive="active">Jämför Ledamöter</button>
+    </mat-menu>
     <span >MinRiksdag</span>
+    <div id="big-menu" style="margin-left: 10px">
       <button mat-button routerLink="/" routerLinkActive="active">Home</button>
       <button mat-button routerLink="/riksdag" routerLinkActive="active">Statistik över partier</button>
       <button mat-button routerLink="/compare" routerLinkActive="active">Jämför partier</button>
+      <button mat-button routerLink="/members" routerLinkActive="active">Jämför Ledamöter</button>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
 
