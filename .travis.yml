@@ -13,15 +13,15 @@ before_install:
  - pyenv global $PYTHON_VERSION
  - pip3 install --user pipenv
  - mkdir -p data
- - if [ ! -f data/party_compare.json ]; then
-      cd vendor/MyRiksdag;
-      #./get_data.sh;
-      #python3 -m pipenv install;
-      #python3 -m pipenv run python3 save_dataframe.py;
-      #python3 -m pipenv run python3 parties.py;
-      #mv party_compare.json parties.json valkretsar.json ../../data;
-   fi
- - true #cp data/* src/assets
+#- if [ ! -f data/party_compare.json ]; then
+#     cd vendor/MyRiksdag;
+#     ./get_data.sh;
+#     python3 -m pipenv install;
+#     python3 -m pipenv run python3 save_dataframe.py;
+#     python3 -m pipenv run python3 parties.py;
+#     mv party_compare.json parties.json valkretsar.json ../../data;
+#  fi
+#- cp data/* src/assets
 
 install:
  - npm install
