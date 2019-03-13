@@ -25,8 +25,7 @@ import { RiksdagComponent } from './riksdag/riksdag.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CompareComponent } from './compare/compare.component';
 import { ChartTestsComponent } from './chart-tests/chart-tests.component';
-import { FormsModule } from '@angular/forms';
-import * as pluginDataLabels from 'chartjs-plugin-datalabels';
+import * as pluginDataLabels from './chartjs-plugin-datalabels';
 import { MembersComponent } from './members/members.component';
 
 const appRoutes: Routes = [
@@ -68,7 +67,6 @@ const appRoutes: Routes = [
     ),
     MatRippleModule,
     MatListModule, MatIconModule,
-    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
