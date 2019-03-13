@@ -21,7 +21,7 @@ before_install:
       python3 -m pipenv run python3 parties.py;
       mv party_compare.json parties.json valkretsar.json ../../data;
    fi
- - mv data/* src/assets
+ - cp data/* src/assets
 
 install:
  - npm install
