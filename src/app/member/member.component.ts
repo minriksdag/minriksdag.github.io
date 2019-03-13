@@ -19,7 +19,7 @@ export class MemberComponent implements OnInit {
     { name: 'Moderaterna',
       abbr: 'M'
     },
-    { name: 'Centerparitet',
+    { name: 'Centerpartiet',
       abbr: 'C'
     },
     { name: 'Kristdemokraterna',
@@ -61,8 +61,8 @@ export class MemberComponent implements OnInit {
   async getMemberPhoto(id) {
     console.log(id);
     return new Promise((resolve, reject) => {
-      this.http.get(`http://data.riksdagen.se/personlista/?iid=${id}`, {responseType: 'text'}).subscribe((data) => {
-        const re = /http:\/\/data.riksdagen.se\/filarkiv\/bilder\/ledamot\/.*_max.jpg/;
+      this.http.get(`https://data.riksdagen.se/personlista/?iid=${id}`, {responseType: 'text'}).subscribe((data) => {
+        const re = /\/\/data.riksdagen.se\/filarkiv\/bilder\/ledamot\/.*_max.jpg/;
         const url = data.match(re)[0];
         console.log(url);
         resolve(url);

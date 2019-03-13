@@ -21,6 +21,10 @@ export class CompareComponent implements OnInit, OnChanges {
         {
           id: 'y-axis-0',
           position: 'left',
+          ticks: {
+            min: 0,
+            max: 100
+          }
         }
       ]
     }
@@ -64,7 +68,7 @@ export class CompareComponent implements OnInit, OnChanges {
     { name: 'Moderaterna',
       abbr: 'M'
     },
-    { name: 'Centerparitet',
+    { name: 'Centerpartiet',
       abbr: 'C'
     },
     { name: 'Kristdemokraterna',
@@ -89,15 +93,12 @@ export class CompareComponent implements OnInit, OnChanges {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.comparisons);
     delete this.comparisons.total;
     this.pairs = Object.keys(this.comparisons);
-    console.log(this.pairs);
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes.prop);
-    console.log('bruh');
+
   }
 
   changedSelect(event) {
@@ -108,11 +109,11 @@ export class CompareComponent implements OnInit, OnChanges {
   }
 
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+
   }
 
   public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+
   }
 
   private buildPair(s1, s2) {
@@ -120,9 +121,8 @@ export class CompareComponent implements OnInit, OnChanges {
   }
 
   updateChart() {
-    this.lineChartLabels = Object.keys(this.comparisons[this.chosenPair]);
+    this.lineChartLabels = Object.keys(this.comparisons[this.chosenPair]).map(str => str.substring(0, 4));
     const values = Object.values(this.comparisons[this.chosenPair]);
-    console.log(values);
     this.lineChartData = [
       { data: values, label: this.chosenPair }
     ];
