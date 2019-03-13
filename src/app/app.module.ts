@@ -14,6 +14,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatRippleModule} from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 
 import { ChartsModule } from 'ng2-charts';
 
@@ -27,6 +29,7 @@ import { FormsModule } from '@angular/forms';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { MemberListComponent } from './memberList/memberList.component';
 import { MemberComponent } from './member/member.component';
+import {MatIconModule} from '@angular/material/icon';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -48,7 +51,7 @@ const appRoutes: Routes = [
     CompareComponent,
     ChartTestsComponent,
     MemberListComponent,
-    MemberComponent
+    MemberComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,9 @@ const appRoutes: Routes = [
     FormsModule,
     MatTableModule,
     MatSortModule,
+    MatCardModule,
+    MatChipsModule,
+    MatIconModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

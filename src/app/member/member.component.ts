@@ -11,14 +11,47 @@ import {default as _members} from '../../assets/members.json';
 export class MemberComponent implements OnInit {
   id;
   member;
+  parties = [
+    { name: 'Miljöpartiet',
+      abbr: 'MP'
+    },
+    { name: 'Moderaterna',
+      abbr: 'M'
+    },
+    { name: 'Centerparitet',
+      abbr: 'C'
+    },
+    { name: 'Kristdemokraterna',
+      abbr: 'KD'
+    },
+    { name: 'Liberalerna',
+      abbr: 'L'
+    },
+    { name: 'Socialdemokraterna',
+      abbr: 'S'
+    },
+    { name: 'Vänsterpartiet',
+      abbr: 'V'
+    },
+    { name: 'Sverigedemokraterna',
+      abbr: 'SD'
+    }];
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
     this.member = Object.values(_members).filter((member: any) => member.id === this.id)[0];
-    console.log(this.member);
+    const totalVotes: any = Object.values(this.member.aggregate_votes)
+      .reduce((accumulator: any, currentValue: any) => accumulator + currentValue);
+    Object.keys(this.member.aggregate_votes).forEach(voteType => {
+      const votes = this.member.aggregate_votes[voteType];
+      this.member['perc' + voteType] = (votes / totalVotes * 100).toFixed(1);
+    });
+  }
 
+  getParty(abbr) {
+    return this.parties.filter(pair => pair.abbr === abbr)[0].name;
   }
 
 }
