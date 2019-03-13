@@ -1,23 +1,27 @@
 <div class="container">
-  <h2>Välj Partier</h2>
-  <div class="row">
-    <mat-form-field>
-      <mat-select placeholder="Parti 1" [(value)]="partyOne" (selectionChange)="changedSelect($event)">
-        <mat-option *ngFor="let party of parties" [value]="party.abbr">
-          {{party.name}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-select placeholder="Parti 2" [(ngModel)]="partyTwo" (selectionChange)="changedSelect($event)">
-        <mat-option *ngFor="let party of parties" [value]="party.abbr">
-          {{party.name}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+  <h1>Jämför Partier</h1>
+  <p>Se hur ofta två partier röstar likadant. Grafen visar antal procent av voteringar som partierna röstat lika i per år.</p>
+  <i>Välj partier:</i>
+  <div class="row" style="margin-top: 5px">
+    <div class="col-12 col-md-2">
+      <mat-form-field style="display: table; margin: auto;">
+        <mat-select placeholder="Parti 1" [(value)]="partyOne" (selectionChange)="changedSelect($event)">
+          <mat-option *ngFor="let party of parties" [value]="party.abbr">
+            {{party.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-12 col-md-2">
+      <mat-form-field style="display: table; margin: auto;">
+        <mat-select placeholder="Parti 2" [(ngModel)]="partyTwo" (selectionChange)="changedSelect($event)">
+          <mat-option *ngFor="let party of parties" [value]="party.abbr">
+            {{party.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </div>
-
-  Chosen Pair: {{chosenPair}}
 
   <div class="row">
     <div class="col-md-12">
