@@ -78,7 +78,10 @@ export class CompareComponent implements OnInit, OnChanges {
     },
     { name: 'Vänsterpartiet',
       abbr: 'V'
-  }];
+    },
+    { name: 'Sverigedemokraterna',
+      abbr: 'SD'
+    }];
   @Input() partyOne: string;
   @Input() partyTwo: string;
   chosenPair: string;
